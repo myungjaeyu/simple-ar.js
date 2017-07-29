@@ -24,6 +24,9 @@
                 arContext,
                 arMarker;
 
+            var 
+                mesh;
+
             init();
 
             function init(){
@@ -43,6 +46,9 @@
                 scene.add(camera);
                 scene.visible = false;
 
+
+                mesh = new THREE.Mesh(new THREE.BoxGeometry(2,2,2), new THREE.MeshBasicMaterial({ color : 0xFF00FF }));
+                scene.add(mesh);
 
 
 
@@ -97,6 +103,9 @@
 
                 arContext.update(arSource.domElement);
                 scene.visible = camera.visible;
+
+
+                mesh.rotateX(.1);
 
             }          
 
