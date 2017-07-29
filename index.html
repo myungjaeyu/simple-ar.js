@@ -1,17 +1,57 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> ar.js </title>
+        <title> simple ar.js </title>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/86/three.min.js"></script>        
         <script src="https://jeromeetienne.github.io/AR.js/three.js/build/ar.min.js"></script>
+
     </head>
     <body>
 
+        <div id="container"></div>
+
         <script>
-            
-            console.log(ARController);
-            console.log(THREE);
+
+            var renderer,
+                scene,
+                camera,
+                container;
+
+            init();
+
+            function init(){
+
+
+
+                container = document.getElementById('container');
+
+                renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+                scene = new THREE.Scene();
+                camera = new THREE.Camera();
+
+                renderer.setClearColor(0x000000, 0);
+                renderer.setSize(window.innerWidth, window.innerHeight);
+
+                container.appendChild(renderer.domElement);
+                scene.add(camera);
+
+
+                render();   
+                
+            }   
+
+
+
+
+            function render(){
+                requestAnimationFrame(render);
+                renderer.render(scene,camera);
+
+            }          
+
             
         </script>
     </body>
