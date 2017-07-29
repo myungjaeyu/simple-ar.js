@@ -5,7 +5,7 @@ var renderer,
 
 var arSource,
     arContext,
-    arMarker;
+    arMarker = [];
 
 var 
     mesh;
@@ -46,11 +46,18 @@ function init(){
         detectionMode: 'mono',
     });
 
-    arMarker = new THREEx.ArMarkerControls(arContext, camera, {
+    arMarker[0] = new THREEx.ArMarkerControls(arContext, camera, {
         type : 'pattern',
         patternUrl : './data/patt.hiro',
         changeMatrixMode: 'cameraTransformMatrix'
     });
+
+    arMarker[1] = new THREEx.ArMarkerControls(arContext, camera, {
+        type : 'pattern',
+        patternUrl : './data/u4bi.patt',
+        changeMatrixMode: 'cameraTransformMatrix'
+    });
+
 
 
 
