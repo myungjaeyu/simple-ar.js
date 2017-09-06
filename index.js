@@ -46,19 +46,19 @@ function init(){
     });
 
     arContext = new THREEx.ArToolkitContext({
-        cameraParametersUrl: './data/camera_para.dat',
+        cameraParametersUrl: './assets/data/camera_para.dat',
         detectionMode: 'mono',
     });
 
     arMarker[0] = new THREEx.ArMarkerControls(arContext, camera, {
         type : 'pattern',
-        patternUrl : './data/patt.hiro',
+        patternUrl : './assets/data/patt.hiro',
         changeMatrixMode: 'cameraTransformMatrix'
     });
 
     arMarker[1] = new THREEx.ArMarkerControls(arContext, camera, {
         type : 'pattern',
-        patternUrl : './data/u4bi.patt',
+        patternUrl : './assets/data/u4bi.patt',
         changeMatrixMode: 'cameraTransformMatrix'
     });
 
